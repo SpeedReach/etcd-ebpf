@@ -1,0 +1,12 @@
+
+
+services:
+  raft1:
+    image: github.com/speedreach/ebpf-etcd
+    container_name: raft1
+    command: ["--leader", "false", "--id", "1"]
+    networks:
+      - ebpf-etcd
+networks:
+  ebpf-etcd:
+    driver: bridge
